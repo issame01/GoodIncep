@@ -8,13 +8,13 @@ volumes:
       type: none
       o: bind
       device: /Users/idryab/TEST1
-  # mariadb:
-  #   name: mariadb
-  #   driver: local
-  #   driver_opts:
-  #     type: none
-  #     o: bind
-  #     device: /Users/idryab/Desktop/incepE1R1P1LAST/srcs/requirements/mariadb
+  mariadb:
+    name: mariadb
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /Users/idryab/TEST2
 
 networks:
   inception:
@@ -52,8 +52,8 @@ services:
   mariadb:
     container_name: mariadb
     build: ./requirements/mariadb/.
-    # volumes:
-    #   - mariadb:/var/lib/musql
+    volumes:
+      - mariadb:/var/lib/mysql
     env_file:
       - .env
     networks:

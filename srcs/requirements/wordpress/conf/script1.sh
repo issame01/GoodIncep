@@ -26,7 +26,7 @@ sed -i 's/username_here/'$db_user'/g' /var/www/wordpress/wp-config.php
 sed -i 's/password_here/'$db_passw'/g' /var/www/wordpress/wp-config.php
 
 # set The Hostname of the That base
-sed -i 's/localhost/'localhost'/g' /var/www/wordpress/wp-config.php
+sed -i 's/localhost/'mariadb'/g' /var/www/wordpress/wp-config.php
 
 # wp config set FORCE_SSL_ADMIN 'false' --allow-root
 
@@ -40,7 +40,7 @@ sed -i 's/localhost/'localhost'/g' /var/www/wordpress/wp-config.php
 # create second user in wordpress
 # wp user create $WP_USR $WP_EMAIL --user_pass=$WP_PWD --role='author' --allow-root
 
-# /usr/sbin/php-fpm7.4 -F
+/usr/sbin/php-fpm7.4 -F
 exec "$@"
 
 
