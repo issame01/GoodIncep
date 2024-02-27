@@ -34,15 +34,8 @@ sed -i 's/localhost/'mariadb'/g' /var/www/wordpress/wp-config.php
 # This constant controls whether caching is enabled in WordPress or not.
 # wp config set WP_CACHE 'true' --allow-root
 
-# instal the wordpress
-# wp core install --url=$DOMAIN_NAME --title="My Wordpress Site" --admin_user=$WP_ADMIN --admin_password=$WP_ADMIN_PASSWD --admin_email=$WP_ADMIN_EMAIL --allow-root
-
+wp core install --url=localhost --title="My Wordpress Site" --admin_user=$WP_ADMIN --admin_password=$WP_ADMIN_PASSWD --admin_email=$WP_ADMIN_EMAIL --allow-root
 # create second user in wordpress
-# wp user create $WP_USR $WP_EMAIL --user_pass=$WP_PWD --role='author' --allow-root
+wp user create $WP_USR $WP_EMAIL --user_pass=$WP_PWD --role='author' --allow-root
 
 /usr/sbin/php-fpm7.4 -F
-exec "$@"
-
-
-
-# wp config create --allow-root -path="/var/www/wordpress"

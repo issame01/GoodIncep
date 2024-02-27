@@ -2,7 +2,7 @@
 
 # Start the MariaDB service
 service mariadb start
-# sleep 5
+
 # Create a file called file.sql
 cat > file.sql <<EOF
 CREATE DATABASE IF NOT EXISTS ${db_name};
